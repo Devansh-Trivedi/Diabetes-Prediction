@@ -17,7 +17,7 @@ import seaborn as sns
 
 
 
-df = pd.read_csv(r'https://raw.githubusercontent.com/Devansh-Trivedi/Diabetes-Prediction/main/diabetes.csv?token=GHSAT0AAAAAABYL6JMX3MOENJDNR3FWUHNQYYUU2PA')
+df = pd.read_csv(r'https://raw.githubusercontent.com/Devansh-Trivedi/Diabetes-Prediction/main/diabetes.csv')
 
 # HEADINGS
 st.title('Diabetes Checkup')
