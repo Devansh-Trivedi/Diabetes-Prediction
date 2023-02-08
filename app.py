@@ -34,20 +34,20 @@ x_train, x_test, y_train, y_test = train_test_split(x,y, test_size = 0.2, random
 
 # FUNCTION
 def user_report():
-  pregnancies = st.sidebar.slider('Pregnancies', 0,17, 3 )
+  Pregnancies = st.sidebar.slider('Pregnancies', 0,17, 3 )
   Glucose = st.sidebar.slider('Glucose', 0,200, 120 )
   bp = st.sidebar.slider('Blood Pressure', 0,122, 70 )
-  skinthickness = st.sidebar.slider('Skin Thickness', 0,100, 20 )
+  SkinThickness = st.sidebar.slider('Skin Thickness', 0,100, 20 )
   Insulin = st.sidebar.slider('Insulin', 0,846, 79 )
   BMI = st.sidebar.slider('BMI', 0,67, 20 )
   DiabetesPedigreeFunction = st.sidebar.slider('Diabetes Pedigree Function', 0.0,2.4, 0.47 )
   Age = st.sidebar.slider('Age', 21,88, 33 )
 
   user_report_data = {
-      'pregnancies':pregnancies,
+      'Pregnancies':Pregnancies,
       'Glucose':Glucose,
       'bp':bp,
-      'skinthickness':skinthickness,
+      'SkinThickness':SkinThickness,
       'Insulin':Insulin,
       'BMI':BMI,
       'DiabetesPedigreeFunction':DiabetesPedigreeFunction,
@@ -90,7 +90,7 @@ else:
 st.header('Pregnancy count Graph (Others vs Yours)')
 fig_preg = plt.figure()
 ax1 = sns.scatterplot(x = 'Age', y = 'Pregnancies', data = df, hue = 'Outcome', palette = 'Greens')
-ax2 = sns.scatterplot(x = user_data['Age'], y = user_data['pregnancies'], s = 150, color = color)
+ax2 = sns.scatterplot(x = user_data['Age'], y = user_data['Pregnancies'], s = 150, color = color)
 plt.xticks(np.arange(10,100,5))
 plt.yticks(np.arange(0,20,2))
 plt.title('0 - Healthy & 1 - Unhealthy')
@@ -113,7 +113,7 @@ st.pyplot(fig_glucose)
 # Age vs Bp
 st.header('Blood Pressure Value Graph (Others vs Yours)')
 fig_bp = plt.figure()
-ax5 = sns.scatterplot(x = 'Age', y = 'BloodPressure', data = df, hue = 'Outcome', palette='Reds')
+ax5 = sns.scatterplot(x = 'Age', y = 'bp', data = df, hue = 'Outcome', palette='Reds')
 ax6 = sns.scatterplot(x = user_data['Age'], y = user_data['bp'], s = 150, color = color)
 plt.xticks(np.arange(10,100,5))
 plt.yticks(np.arange(0,130,10))
@@ -125,7 +125,7 @@ st.pyplot(fig_bp)
 st.header('Skin Thickness Value Graph (Others vs Yours)')
 fig_st = plt.figure()
 ax7 = sns.scatterplot(x = 'Age', y = 'SkinThickness', data = df, hue = 'Outcome', palette='Blues')
-ax8 = sns.scatterplot(x = user_data['Age'], y = user_data['skinthickness'], s = 150, color = color)
+ax8 = sns.scatterplot(x = user_data['Age'], y = user_data['SkinThickness'], s = 150, color = color)
 plt.xticks(np.arange(10,100,5))
 plt.yticks(np.arange(0,110,10))
 plt.title('0 - Healthy & 1 - Unhealthy')
