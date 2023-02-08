@@ -36,7 +36,7 @@ x_train, x_test, y_train, y_test = train_test_split(x,y, test_size = 0.2, random
 def user_report():
   Pregnancies = st.sidebar.slider('Pregnancies', 0,17, 3 )
   Glucose = st.sidebar.slider('Glucose', 0,200, 120 )
-  bp = st.sidebar.slider('Blood Pressure', 0,122, 70 )
+  BloodPressure = st.sidebar.slider('BloodPressure', 0,122, 70 )
   SkinThickness = st.sidebar.slider('Skin Thickness', 0,100, 20 )
   Insulin = st.sidebar.slider('Insulin', 0,846, 79 )
   BMI = st.sidebar.slider('BMI', 0,67, 20 )
@@ -46,7 +46,7 @@ def user_report():
   user_report_data = {
       'Pregnancies':Pregnancies,
       'Glucose':Glucose,
-      'bp':bp,
+      'BloodPressure':BloodPressure,
       'SkinThickness':SkinThickness,
       'Insulin':Insulin,
       'BMI':BMI,
@@ -110,11 +110,11 @@ st.pyplot(fig_glucose)
 
 
 
-# Age vs Bp
-st.header('Blood Pressure Value Graph (Others vs Yours)')
+# Age vs BloodPressure
+st.header('BloodPressure Value Graph (Others vs Yours)')
 fig_bp = plt.figure()
-ax5 = sns.scatterplot(x = 'Age', y = 'bp', data = df, hue = 'Outcome', palette='Reds')
-ax6 = sns.scatterplot(x = user_data['Age'], y = user_data['bp'], s = 150, color = color)
+ax5 = sns.scatterplot(x = 'Age', y = 'BloodPressure', data = df, hue = 'Outcome', palette='Reds')
+ax6 = sns.scatterplot(x = user_data['Age'], y = user_data['BloodPressure'], s = 150, color = color)
 plt.xticks(np.arange(10,100,5))
 plt.yticks(np.arange(0,130,10))
 plt.title('0 - Healthy & 1 - Unhealthy')
